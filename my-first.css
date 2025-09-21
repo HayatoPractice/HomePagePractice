@@ -1,0 +1,635 @@
+body {
+  margin: 0px;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.header-bottom {
+  padding: 0 60px;
+  display: flex;
+  justify-content: center;
+}
+
+/* 一番上の背景色グレーの一文説明 */
+.header-top {
+  background-color: rgb(224, 224, 224);
+  height: 20px;
+  font-size: 12px;
+  padding-left: 80px;
+}
+
+/* 上部リスト構成変更 */
+.top-list {
+  font-size: 13px;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.top-list a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 24px 10px;
+  color: #4a9c96;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* 縦線を持つliをFlexboxコンテナにする */
+.top-list>li+li {
+  display: flex;
+  align-items: center;
+}
+
+/* リストの間グレー線 */
+.top-list>li+li::before {
+  content: "|";
+  color: #cccccc;
+  margin: 0px;
+}
+
+/* .top-list の直下の子であるliのうち、最後のもの */
+.top-list>li:last-child::after {
+  content: "|";
+  color: #cccccc;
+  margin-left: 25px;
+}
+
+/* マウスが乗っていない時のaタグに変化を滑らかにする設定 */
+.top-lilst>li>a {
+  transition: background-color 0.2s ease;
+}
+
+/* マウスが乗った時のaタグのスタイル */
+.top-list>li>a:hover {
+  color: #f5f5f5;
+}
+
+.header-bottom .head {
+  font-size: 20px;
+  color: black !important;
+}
+
+.dropdown {
+  position: relative;
+}
+
+/* ドロップダウン */
+.dropdown-menu {
+  /* 普段は隠しておく */
+  display: none;
+  /* 親を基準に、配置 */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  /* 見た目調整 */
+  width: 100px;
+  background-color: #008080;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-radius: 2px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 親メニューにマウスが乗ったら、子メニューが表示されるようにする */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* ドロぷダウンメニュー内のリンクの見た目 */
+.dropdown-menu li a {
+  color: white;
+  padding: 12px 20px;
+  display: block;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #006666;
+}
+
+.top-name {
+  /* 背景画像の調整 */
+  background-image: url(https://t4.ftcdn.net/jpg/03/80/53/83/240_F_380538385_iszX2J1ICvsBi9I6OXoAKqzls2fDZUr7.jpg);
+  background-size: cover;
+  background-position: center;
+  /* 高さ */
+  height: 450px;
+  /* テキストの調整 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* テキストの調整 */
+  color: white;
+  text-align: center;
+
+}
+
+.top-name p {
+  font-size: 20px;
+  margin: 0px;
+}
+
+/* 背景画面下のニュース */
+.news {
+  background-color: lightgray;
+  margin: 0px;
+  display: flex;
+
+}
+
+.news-top {
+  /* テキストの構成 */
+  text-align: center;
+  padding: 2px 25px;
+  background-color: #477c41;
+  margin-left: 50px;
+  font-size: 13px;
+  color: white;
+}
+
+/* 三つのリスト一覧 */
+.submain-content {
+  width: 100%;
+  text-align: center;
+}
+
+.submain {
+  padding: 80px;
+}
+
+/* 三つのコマンド一覧 */
+.features {
+  display: flex;
+}
+
+/* それぞれのコマンド */
+.command {
+  width: 100%;
+  flex: 1;
+  text-align: center;
+  margin: 30px;
+  padding: 0px 20px;
+}
+
+/* コマンドのそれぞれのリンク */
+.command a {
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+}
+
+/* コマンドのアイコン */
+.icon-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  /* 中央揃えのためのFlexbox */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 通常時のスタイル */
+  background-color: white;
+  border: 2px solid orange;
+  /* アニメーションの設定 */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* SVGアイコンのスタイル */
+.icon-circle svg {
+  width: 50px;
+  height: 50px;
+}
+
+.icon-circle svg path {
+  fill: orange;
+  transition: fill 0.3s ease;
+}
+
+/* ホバー時のスタイル */
+.command a:hover .icon-circle {
+  background-color: orange;
+  border-color: orange;
+}
+
+.command a:hover .icon-circle svg path {
+  fill: white;
+}
+
+/* コマンドのテキスト */
+.icon-top {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.command-text {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* 池の写真 */
+.middle-image img {
+  width: 450px;
+  padding-top: 20px;
+}
+
+/* 病院の施術内容と患者様の声 */
+.middle {
+  box-sizing: border-box;
+  padding: 80px;
+  background-color: bisque;
+}
+
+/* 施術内容 */
+.middle-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+h3 {
+  text-align: center;
+  font-size: 25px;
+}
+
+/* 病院写真右のテキスト */
+.middle-text {
+  width: 400px;
+}
+
+/* 星マーク */
+.heading-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-star {
+  width: 24px;
+  height: 24px;
+}
+
+.heading-with-icon p {
+  margin: 0;
+}
+
+.detail {
+  display: block;
+  margin-bottom: 60px;
+  text-decoration: none;
+  padding-top: 40px;
+}
+
+
+.detail-main {
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+/* 患者様の声一覧 */
+.middle-bottom {
+  display: block;
+  padding: 80px;
+  text-align: center;
+}
+
+.middle-bottom-news {
+  display: flex;
+}
+
+/* 一覧を見る */
+.push-button {
+  display: inline-block;
+  padding: 3px 100px;
+  font-size: 18px;
+  font-family: sans-serif;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  background-color: green;
+  box-shadow: 0 5px 0 #3a6b60;
+  position: relative;
+  top: 0;
+  transition: all 0.2s ease;
+}
+
+.push-button:hover {
+  top: 3px;
+  box-shadow: 0 2px 0 #3a6b60;
+}
+
+.push-button span {
+  transition: opacity 0.2s ease;
+}
+
+.push-button:hover span {
+  opacity: 0;
+}
+
+.inquiry {
+  text-align: center;
+}
+
+/* 五つの質問回答 */
+.list-item {
+  border-bottom: 1px solid #eee;
+  padding: 20px 0;
+}
+
+.bottom-top {
+  padding: 80px;
+}
+
+/* 五つの質問 */
+.list-question {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+  cursor: pointer;
+  outline: none;
+}
+
+.list-question::-webkit-details-marker,
+.list-question::marker {
+  display: none;
+}
+
+/* Qアイコン */
+.q-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #e6a443;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  flex-shrink: 0;
+  font-size: 15px;
+}
+
+/* 質問テキスト */
+.list-question p {
+  font-size: 22px;
+  margin: 0;
+  color: #333;
+  transition: color 0.3s ease;
+  font-size: 15px;
+}
+
+.list-question:hover p {
+  color: #e6a443;
+}
+
+/* 五つの回答 */
+.list-answer {
+  display: flex;
+  gap: 15px;
+  padding-top: 20px;
+}
+
+/* 文頭のAアイコン */
+.a-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #777;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.list-answer p {
+  margin: 0;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* お問い合わせ */
+.bottom-foot {
+  padding: 80px;
+  text-align: center;
+  background-color: #b8bab7;
+}
+
+/* お問い合わせリスト */
+.foot-form {
+  display: block;
+  padding: 30px;
+}
+
+input {
+  width: 600px;
+  height: 30px;
+  background-color: #e7e7e7;
+}
+
+/* お問い合わせ記入一覧 */
+.bottom-foot-form {
+  background-color: white;
+}
+
+select {
+  width: 605px;
+  height: 38px;
+  background-color: #e7e7e7;
+}
+
+/* 内容記入リスト */
+textarea {
+  width: 590px;
+  height: 200px;
+  background-color: #e7e7e7;
+}
+
+/* 送信ボタン */
+.question-button {
+  display: inline-block;
+  padding: 5px 30px;
+  font-size: 18px;
+  font-family: sans-serif;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  background-color: green;
+  box-shadow: 0 5px 0 #3a6b60;
+  position: relative;
+  top: 0;
+  transition: all 0.2s ease;
+}
+
+.btn {
+  padding-bottom: 100px;
+}
+
+.question-button:hover {
+  top: 3px;
+  box-shadow: 0 2px 0 #3a6b60;
+}
+
+.question-button span {
+  transition: opacity 0.2s ease;
+}
+
+.question-button:hover span {
+  opacity: 0;
+}
+
+.instagram {
+  max-width: 960px;
+  margin: 40px auto;
+}
+
+.instagram-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.instagram-header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #dbdbdb;
+  margin-right: 15px;
+}
+
+.instagram-grid {
+  display: grid;
+  /* カラムの数を、画面幅に応じて自動調整する */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /* グリッド間の隙間を設定 */
+  gap: 20px;
+}
+
+.instagram-post img {
+  width: 100%;
+  height: auto;
+  /* 画面が正方形になるようにアスペクト比を固定 */
+  aspect-ratio: 1 / 1;
+  /* 比率を保ったまま領域を埋める */
+  object-fit: cover;
+  /* 画像下の余分な隙間を消す */
+  display: block;
+  border: 1px solid #dbdbdb;
+}
+
+.googlemap-header {
+  width: 100%;
+  height: 500px;
+  margin: 0;
+  padding: 0;
+}
+
+.googlemap-text p {
+  text-align: center;
+  padding: 8px 0px 4px 0px;
+  font-size: 11.5px;
+  margin: 0;
+}
+
+/* SNSリスト */
+.sns {
+  background-color: #44494f;
+  padding: 20px 0;
+}
+
+.sns ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.sns {
+  padding: 15px 80px;
+}
+
+.sns a {
+  color: lightgray;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  padding: 0 120px;
+}
+
+.sns span {
+  letter-spacing: 2px;
+}
+
+.sns span:hover {
+  color: black;
+}
+
+.footer-last {
+  background-color: #4a9c96;
+  font-size: 11px;
+}
+
+/* ページトップボタン */
+.page-top-btn {
+  color: #c7d2d1;
+  text-decoration: none;
+  padding: 15px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+/* 病院についての構成 */
+.last ul {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* リストタグ */
+.last a {
+  text-decoration: none;
+  color: #c7d2d1;
+  list-style: none;
+  border-left: 1px solid #c7d2d1;
+  padding: 0 20px;
+}
+
+/* 最初のリストタグ */
+.last a:first-child {
+  /* 線を消去 */
+  border-left: none;
+}
+
+/* 一番下のアカウント名 */
+.account {
+  margin: 0;
+  color: #c7d2d1;
+  text-align: center;
+  font-weight: bold;
+  padding: 20px 0;
+}

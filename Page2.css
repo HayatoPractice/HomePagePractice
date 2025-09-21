@@ -1,0 +1,286 @@
+body {
+  margin: 0px;
+  background-color: #F5F5F5;
+}
+
+header {
+  background-color: white;
+}
+
+.header-bottom {
+  padding: 0 70px;
+  display: flex;
+  justify-content: center;
+}
+
+/* 一番上の背景色グレーの一文説明 */
+.header-top {
+  background-color: rgb(224, 224, 224);
+  height: 20px;
+  font-size: 12px;
+  padding-left: 80px;
+}
+
+/* 上部リスト構成変更 */
+.top-list {
+  font-size: 13px;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.top-list a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 24px 10px;
+  color: #4a9c96;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* 縦線を持つliをFlexboxコンテナにする */
+.top-list>li+li {
+  display: flex;
+  align-items: center;
+}
+
+/* リストの間グレー線 */
+.top-list>li+li::before {
+  content: "|";
+  color: #cccccc;
+  margin: 0px;
+}
+
+/* .top-list の直下の子であるliのうち、最後のもの */
+.top-list>li:last-child::after {
+  content: "|";
+  color: #cccccc;
+  margin-left: 25px;
+}
+
+/* マウスが乗っていない時のaタグに変化を滑らかにする設定 */
+.top-lilst>li>a {
+  transition: background-color 0.2s ease;
+}
+
+/* マウスが乗った時のaタグのスタイル */
+.top-list>li>a:hover {
+  color: #f5f5f5;
+}
+
+.header-bottom .head {
+  font-size: 20px;
+  color: black !important;
+}
+
+.dropdown {
+  position: relative;
+}
+
+/* ドロップダウン */
+.dropdown-menu {
+  /* 普段は隠しておく */
+  display: none;
+  /* 親を基準に、配置 */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  /* 見た目調整 */
+  width: 100px;
+  background-color: #008080;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-radius: 2px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 親メニューにマウスが乗ったら、子メニューが表示されるようにする */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* ドロぷダウンメニュー内のリンクの見た目 */
+.dropdown-menu li a {
+  color: white;
+  padding: 12px 20px;
+  display: block;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #006666;
+}
+
+/* リンク元 */
+.history {
+  font-size: 12px;
+  padding: 20px 70px;
+}
+
+.history a {
+  text-decoration: none;
+  color: black;
+}
+
+/* 詳細説明欄 */
+.content {
+  margin: 0px 70px 70px 70px;
+  padding: 30px 30px;
+  background-color: white;
+}
+
+/* 題名 */
+h1 {
+  font-size: 25px;
+  margin: 0;
+}
+
+/* 小見出し */
+.introduction p {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0;
+  padding-bottom: 35px;
+}
+/* 画像 */
+.image {
+  background-image: url(https://t3.ftcdn.net/jpg/02/12/40/10/360_F_212401024_YQ5coB5EwZzjISRmgAz5wb9neLcEKm5j.jpg);
+  height: 700px;
+}
+
+.text {
+  margin: 0;
+  padding: 35px 0px;
+}
+
+.text2 {
+  padding-bottom: 35px;
+}
+
+/* 一覧 */
+.definition-list {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin: 0;
+}
+
+/* div内を横にする */
+.definition-list div {
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* 一番最後の行の下線消去 */
+.definition-list div:last-child {
+  border-bottom: none;
+}
+
+/* 項目名の構成 */
+.definition-list dt {
+  background-color: #f8f9fa;
+  padding: 5px;
+  width: 130px;
+  font-weight: bold;
+  border-right: 1px solid #e0e0e0;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* 説明の構成 */
+.definition-list dd {
+  padding: 5px;
+  margin: 0;
+  /* 残りの幅を全て使用 */
+  flex-grow: 1;
+  font-size: 12px;
+}
+
+/* SNSリスト */
+.sns {
+  background-color: #44494f;
+  padding: 20px 0;
+}
+
+.sns ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.sns {
+  padding: 15px 80px;
+}
+
+.sns a {
+  color: lightgray;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  padding: 0 120px;
+}
+
+.sns span {
+  letter-spacing: 2px;
+}
+
+.sns span:hover {
+  color: black;
+}
+
+.footer-last {
+  background-color: #4a9c96;
+  font-size: 11px;
+}
+
+/* ページトップボタン */
+.page-top-btn {
+  color: #c7d2d1;
+  text-decoration: none;
+  padding: 15px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+/* 病院についての構成 */
+.last ul {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* リストタグ */
+.last a {
+  text-decoration: none;
+  color: #c7d2d1;
+  list-style: none;
+  border-left: 1px solid #c7d2d1;
+  padding: 0 20px;
+}
+
+/* 最初のリストタグ */
+.last a:first-child {
+  /* 線を消去 */
+  border-left: none;
+}
+
+/* 一番下のアカウント名 */
+.account {
+  margin: 0;
+  color: #c7d2d1;
+  text-align: center;
+  font-weight: bold;
+  padding: 20px 0;
+}

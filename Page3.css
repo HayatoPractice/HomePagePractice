@@ -1,0 +1,366 @@
+body {
+  margin: 0px;
+  background-color: #F5F5F5;
+}
+
+header {
+  background-color: white;
+}
+
+.header-bottom {
+  padding: 0 70px;
+  display: flex;
+  justify-content: center;
+}
+
+/* 一番上の背景色グレーの一文説明 */
+.header-top {
+  background-color: rgb(224, 224, 224);
+  height: 20px;
+  font-size: 12px;
+  padding-left: 80px;
+}
+
+/* 上部リスト構成変更 */
+.top-list {
+  font-size: 13px;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.top-list a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 24px 10px;
+  color: #4a9c96;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* 縦線を持つliをFlexboxコンテナにする */
+.top-list>li+li {
+  display: flex;
+  align-items: center;
+}
+
+/* リストの間グレー線 */
+.top-list>li+li::before {
+  content: "|";
+  color: #cccccc;
+  margin: 0px;
+}
+
+/* .top-list の直下の子であるliのうち、最後のもの */
+.top-list>li:last-child::after {
+  content: "|";
+  color: #cccccc;
+  margin-left: 25px;
+}
+
+/* マウスが乗っていない時のaタグに変化を滑らかにする設定 */
+.top-lilst>li>a {
+  transition: background-color 0.2s ease;
+}
+
+/* マウスが乗った時のaタグのスタイル */
+.top-list>li>a:hover {
+  color: #f5f5f5;
+}
+
+.header-bottom .head {
+  font-size: 20px;
+  color: black !important;
+}
+
+.dropdown {
+  position: relative;
+}
+
+/* ドロップダウン */
+.dropdown-menu {
+  /* 普段は隠しておく */
+  display: none;
+  /* 親を基準に、配置 */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  /* 見た目調整 */
+  width: 100px;
+  background-color: #008080;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-radius: 2px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 親メニューにマウスが乗ったら、子メニューが表示されるようにする */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* ドロぷダウンメニュー内のリンクの見た目 */
+.dropdown-menu li a {
+  color: white;
+  padding: 12px 20px;
+  display: block;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #006666;
+}
+
+/* リンク元 */
+.former {
+  font-size: 12px;
+  padding: 20px 70px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.former span {
+  color: red;
+}
+
+.former a {
+  text-decoration: none;
+}
+
+.former p {
+  margin: 0;
+  padding: 0 5px;
+}
+
+/* 詳細説明欄 */
+.content {
+  margin: 0px 70px 70px 70px;
+  padding: 30px 20px 50px 20px;
+  background-color: white;
+}
+
+/* 題名 */
+h1 {
+  font-size: 25px;
+  margin: 0;
+}
+
+/* 小見出し */
+.introduction p {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0;
+  padding-bottom: 35px;
+}
+/* 料金について */
+.money-content {
+  font-weight: bold;
+  font-size: 25px;
+  border-left: solid 4px #4a9c96;
+  padding: 10px;
+  background-color: #cccccc;
+}
+
+.money li {
+  list-style: none;
+  margin: 0;
+  padding: 35px 0 0 0;
+}
+
+.content ul {
+  padding: 0;
+}
+/* 例 */
+.ex {
+  margin: 35px 0 0 0;
+}
+
+.ex dl {
+  display: flex;
+  border: 1px solid #e0e0e0;
+  font-size: 13px;
+  margin: 0;
+}
+
+.ex dt {
+  padding: 8px 16px;
+  align-items: flex-start;
+}
+
+.ex dd {
+  margin: 0;
+  padding: 8px 18px;
+  border-left: 1px solid #e0e0e0;
+}
+
+.list {
+  margin: 30px 0 0 0;
+}
+
+.list dl {
+  display: flex;
+  border-top: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  margin: 0;
+  font-size: 13px;
+}
+
+.list dt {
+  border-right: 1px solid #e0e0e0;
+  margin: 0;
+  padding: 10px 20px;
+  width: 250px;
+}
+
+.list dd {
+  margin: 0;
+  padding: 10px 20px;
+}
+/* リストの一番下の行のみ反映 */
+.list dl:last-child {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* 注意書き一覧 */
+.attention {
+  margin: 0;
+  padding: 30px 20px 0 20px;
+}
+
+.attention li {
+  padding: 5px 0;
+}
+/* メニューと料金表の構成 */
+.menu {
+  margin: 50px 0 0 0;
+  font-size: 13px;
+  width: auto;
+}
+
+/* メニューと料金表 */
+.menu dl {
+  display: flex;
+  border-top: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  margin: 0;
+}
+/* メニュー列 */
+.menu dt {
+  border-right: 1px solid #e0e0e0;
+  margin: 0;
+  padding: 10px 20px;
+  width: 180px;
+  flex-shrink: 0;
+}
+/* 料金列 */
+.menu dd {
+  margin: 0;
+  padding: 10px 20px;
+}
+/* メニューと料金表最後の列 */
+.menu dl:last-child {
+  border-bottom: 1px solid #e0e0e0;
+}
+/* メニュー列を縦並び */
+.menu dt span {
+  display: block;
+  color: black;
+}
+/* 料金列を縦並び */
+.special-offer {
+  color: red;
+}
+
+/* SNSリスト */
+.sns {
+  background-color: #44494f;
+  padding: 20px 0;
+}
+
+.sns ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.sns {
+  padding: 15px 80px;
+}
+
+.sns a {
+  color: lightgray;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  padding: 0 120px;
+}
+
+.sns span {
+  letter-spacing: 2px;
+  color: red;
+}
+
+.sns span:hover {
+  color: black;
+}
+
+.footer-last {
+  background-color: #4a9c96;
+  font-size: 11px;
+}
+
+/* ページトップボタン */
+.page-top-btn {
+  color: #c7d2d1;
+  text-decoration: none;
+  padding: 15px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+/* 病院についての構成 */
+.last ul {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* リストタグ */
+.last a {
+  text-decoration: none;
+  color: #c7d2d1;
+  list-style: none;
+  border-left: 1px solid #c7d2d1;
+  padding: 0 20px;
+}
+
+/* 最初のリストタグ */
+.last a:first-child {
+  /* 線を消去 */
+  border-left: none;
+}
+
+/* 一番下のアカウント名 */
+.account {
+  margin: 0;
+  color: #c7d2d1;
+  text-align: center;
+  font-weight: bold;
+  padding: 20px 0;
+}
